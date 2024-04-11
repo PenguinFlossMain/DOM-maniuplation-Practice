@@ -1,26 +1,45 @@
-document.addEventListener("DOMContentLoaded", function () {//--code can run before DOM has fully loaded. This line of text is so the browser waits until it is
-    let paragraph = document.createElement('p');
-    let text = document.createTextNode('whatever text youd like it to be');
-
-    paragraph.style.color = "red";
-    paragraph.style.textTransform = "uppercase"; //-- Gotta do camelCase
-    paragraph.className = "some-paragraph";
-
-    paragraph.appendChild(text); //--Placing Text inside of the paragraph
-    document.body.appendChild(paragraph); //-- this is equivalent to a <p> in HTML
-
-    let button = document.createElement('button');
-    let btnText =document.createTextNode('click Me!');
-    button.appendChild(btnText);
-    document.body.appendChild(button)
-
-    button.addEventListener('click', function() {
-        let h1= document.createElement('h1');
-        let h1Text = document.createTextNode("I've been clicked")
-        h1.appendChild(h1Text)
-        document.body.appendChild(h1)
-    })
+document.addEventListener('DOMContentLoaded', function() {
+let headCont = document.createElement('header-container');
+let h1 = document.createElement('h1');
+let h1Text = document.createTextNode('This is an h1');
+headCont.appendChild(h1);
+document.body.appendChild(headCont);
+h1.appendChild(h1Text);
+let h2 = document.createElement('h2');
+let h2Text = document.createTextNode('This is an h2');
+h2.appendChild(h2Text);
+let h3 = document.createElement('h3');
+let h3Text = document.createTextNode('This is an h3');
+h3.appendChild(h3Text);
+let h4 = document.createElement('h4');
+let h4Text = document.createTextNode('This is an h4');
+h4.appendChild(h4Text)
+let h5 = document.createElement('h5');
+let h5Text = document.createTextNode('this is an h5');
+h5.appendChild(h5Text);
+let h6 = document.createElement('h6');
+let h6Text =document.createTextNode('this is an h6');
+h6.appendChild(h6Text);
+headCont.appendChild(h2);
+headCont.appendChild(h3);
+headCont.appendChild(h4);
+headCont.appendChild(h5);
+headCont.appendChild(h6);
+let cArr = ["red", "blue", "green", "yellow", "orange", "purple", "black", "aquamarine"]
+document.addEventListener('dblclick', function() {
+h1.style.color = cArr[Math.floor(Math.random() * cArr.length)]
+})
+let counter = 1
+btn = document.getElementById('btn')
+btn.addEventListener('click', function () {
+    for (let i = 0; i < counter; i++){
+let btnClicked = document.createElement('h1');
+let btnText = document.createTextNode("This is list item" + [counter]);
+headCont.appendChild(btnClicked);
+btnClicked.appendChild(btnText);
+counter ++
+break
+}
+})
 })
 
-let someDIv = document.getElementById('best-div') //-- same as <div id-best-div></div>
-let redElements = document.getElementsByClassName('red-font')//--somethign like this allows multiple selections
